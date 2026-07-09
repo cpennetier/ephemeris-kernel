@@ -1,0 +1,22 @@
+[build-system]
+requires = ["maturin>=1.5"]
+build-backend = "maturin"
+
+[project]
+name = "ephemeris-kernel"
+version = "0.1.0"
+description = "A deterministic time-and-truth runtime for discrete-event systems"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Christophe Pennetier" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pyarrow>=14.0"]
+
+[tool.maturin]
+manifest-path = "crates/ephemeris-des/Cargo.toml"
+module-name = "ephemeris._engine"
+python-source = "python"
+features = ["pyo3"]

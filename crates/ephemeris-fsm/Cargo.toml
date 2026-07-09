@@ -1,0 +1,37 @@
+[package]
+name = "ephemeris-fsm"
+version = "0.1.0"
+edition = "2021"
+description = "Ephemeris Kernel entity state machine"
+
+[lib]
+name = "ephemeris_fsm_py"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pyo3 = { version = "0.24", features = ["extension-module"], optional = true }
+arrow = { version = "55", features = ["ipc"], optional = true }
+arrow-pyarrow = { version = "55", optional = true }
+parking_lot = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+proptest = "1.0"
+criterion = { version = "0.5", features = ["html_reports"] }
+rayon = "1"
+
+[features]
+default = ["pyo3", "arrow", "arrow-pyarrow"]
+python = ["pyo3", "arrow", "arrow-pyarrow"]
+arrow_only = ["arrow"]
+
+[[bench]]
+name = "machine_bench"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/ephemeris-des",
+    "crates/ephemeris-ledger",
+    "crates/ephemeris-fsm",
+]

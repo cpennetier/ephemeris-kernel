@@ -1,0 +1,17 @@
+[build-system]
+requires = ["maturin>=1.5"]
+build-backend = "maturin"
+
+[project]
+name = "ephemeris-ledger"
+version = "0.1.0"
+description = "Ephemeris Kernel capacity ledger"
+requires-python = ">=3.11"
+classifiers = ["Programming Language :: Rust"]
+
+[tool.maturin]
+features = ["python"]
+module-name = "ephemeris_ledger_py"
+
+[tool.pytest.ini_options]
+testpaths = ["python/tests"]
