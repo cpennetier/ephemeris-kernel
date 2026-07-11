@@ -15,7 +15,7 @@
 
 ## The question
 
-At time \(t\):
+At time $t$:
 
 - what is the state of the world;
 - which ordered events produced it;
@@ -42,7 +42,7 @@ external policy or planner
 │  total event order                          │
 │  append-only transition history             │
 │  capacity reservations with versioning      │
-│  deterministic snapshots and run manifests │
+│  deterministic snapshots and run manifests  │
 └─────────────────────────────────────────────┘
           │
           ▼
@@ -56,7 +56,7 @@ The kernel contains **no optimizer and no policy**. It executes imposed decision
 Ephemeris provides:
 
 - an integer-time event queue;
-- a total event order \((\mathrm{time},\mathrm{event\_id})\);
+- a total event order $(\mathrm{time},\mathrm{event\_id})$;
 - deterministic replay;
 - append-only state and transition ledgers;
 - byte-identical ordered snapshots on a given platform;
