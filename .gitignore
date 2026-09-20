@@ -18,3 +18,17 @@ docs/SESSION_CONTEXT.md
 PUBLICATION-CHECKLIST.md
 __pycache__/
 *.pyc
+
+# Private local agent instructions, including when building source packages.
+.agent/
+.agents/
+.claude/
+.codex/
+AGENTS.md
+AGENTS.override.md
+CLAUDE.md
+CLAUDE.local.md
+AGENT_GLOBAL.md
+MACHINE.md
+PROMPTING.md
+CONTRACT.md

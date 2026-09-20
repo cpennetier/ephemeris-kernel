@@ -9,11 +9,12 @@ test-rust:
 
 develop:
 	maturin develop --release
+	python scripts/route-native-extension.py
 
 build:
 	maturin build --release
 
 guard:
-	pytest tests/test_no_domain_vocabulary.py -q
+	pytest tests -q
 
 test: test-rust guard
