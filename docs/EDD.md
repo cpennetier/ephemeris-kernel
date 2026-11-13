@@ -1,6 +1,6 @@
 # EDD: how Ephemeris Kernel is built
 
-Written on 2026-11-11 from commit `9c2525f`. It records the design as it is; the requirements are in `docs/PRD.md` and the contract in `docs/ERD.md`.
+Written on 2026-11-11 from commit `9c2525f`. It records the design as it is; the contract is in `docs/ERD.md`.
 
 ## Context and scope
 
@@ -76,7 +76,7 @@ Gaps: no test compares output bytes (R1), and no test drives `ephemeris._engine`
 - Money: none. No CI, deploy, paid API or hosted service.
 - Compute to run: one process, one thread, in memory. No baseline speed is recorded (`docs/ERD.md`, Budgets).
 - Compute to build: `make test` takes 6.2 s warm. A cold build compiles Arrow and PyO3 and was not measured.
-- Tokens and time to build a change: each roadmap item is one small change with its tests; none needs a paid service.
+- Tokens and time to build a change: each change is small and comes with its tests; none needs a paid service.
 
 ## Risks, rollout and the way back
 
